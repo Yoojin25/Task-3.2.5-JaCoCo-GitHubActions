@@ -1,0 +1,4 @@
+rootProject.name = 'Task-3.2.5-JaCoCo'
+include 'src:untitled'
+findProject(':src:untitled')?.name = 'untitled'
+
