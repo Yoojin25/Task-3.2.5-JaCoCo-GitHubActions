@@ -1,0 +1,29 @@
+name: test GA
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Grant execute permission to gradlew
+      run: chmod +x ./gradlew
+
+    - name: Build
+      run: ./gradlew build
+
+    - name: Run tests
+      run: ./gradlew test jacocoTestReport
+
+    - name: Check coverage
+      run: ./gradlew jacocoTestCoverageVerification
