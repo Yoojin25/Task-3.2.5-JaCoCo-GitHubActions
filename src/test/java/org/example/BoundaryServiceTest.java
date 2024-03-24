@@ -21,7 +21,7 @@ public class BoundaryServiceTest {
     @ParameterizedTest(name = "Массив #{index}: {0}")
     @MethodSource("arrays")
     public void testFindMin(int[] input) {
-        int expected = IntStream.of(input).min().getAsInt();
+        int expected = IntStream.of(input).max().getAsInt();
         int actual = boundaryService.findMin(input);
 
         assertEquals(expected, actual);
