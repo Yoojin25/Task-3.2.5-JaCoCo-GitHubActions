@@ -13,7 +13,9 @@ public class BoundaryServiceTest {
 
     private static Stream<int[]> arrays() {
         return Stream.of(
-                new int[] {0});
+                new int[] {7, -8, 0, 1, 3},
+                new int[] {9, 1, 5, -1, 4},
+                new int[] {4, 6, 2, 2, -7});
     }
 
     @ParameterizedTest(name = "Массив #{index}: {0}")
